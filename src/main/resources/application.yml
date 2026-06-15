@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: oracle-db-mcp-server
+
+  main:
+    web-application-type: none
+    banner-mode: off
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  ai:
+    mcp:
+      server:
+        name: oracle-db-mcp-server
+        version: 0.0.1
+        type: SYNC
+        stdio: true
+
+logging:
+  file:
+    name: ${LOG_FILE:${user.home}/oracle-db-mcp-server.log}
